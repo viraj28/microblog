@@ -197,6 +197,22 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "flask-wtf"
+version = "1.1.1"
+description = "Form rendering, validation, and CSRF protection for Flask with WTForms."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Flask = "*"
+itsdangerous = "*"
+WTForms = "*"
+
+[package.extras]
+email = ["email-validator"]
+
+[[package]]
 name = "frozenlist"
 version = "1.4.0"
 description = "A list-like structure which implements collections.abc.MutableSequence"
@@ -594,6 +610,20 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "wtforms"
+version = "3.0.1"
+description = "Form validation and rendering for Python web development."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+MarkupSafe = "*"
+
+[package.extras]
+email = ["email-validator"]
+
+[[package]]
 name = "yapf"
 version = "0.40.1"
 description = "A formatter for Python code."
@@ -633,7 +663,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "3d906baf004c9d8357d25b4f7b079d7579053ca63440e46ac3d261a10fe9bf3a"
+content-hash = "5f01d2dfbda8d707d17486a32ff9981ff0c569394cc2562bcf7d25c23ea116e0"
 
 [metadata.files]
 aiohttp = []
@@ -652,6 +682,7 @@ colorama = []
 cryptography = []
 debugpy = []
 flask = []
+flask-wtf = []
 frozenlist = []
 idna = []
 importlib-metadata = []
@@ -685,6 +716,7 @@ ujson = []
 urllib3 = []
 werkzeug = []
 whatthepatch = []
+wtforms = []
 yapf = []
 yarl = []
 zipp = []
