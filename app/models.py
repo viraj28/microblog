@@ -35,15 +35,15 @@ class User(UserMixin, db.Model):
       digest, size)
 
   def follow(self, user):
-    if not self.is_followig(user):
+    if not self.is_following(user):
       self.followed.append(user)
 
   def unfollow(self, user):
-    if self.is_followig(user):
+    if self.is_following(user):
       self.followed.remove(user)
 
   def is_following(self, user):
-    return self.followed.filter(followed.c.followed_id == user.id).count() > 0
+    return self.followed.filter(followers.c.followed_id == user.id).count() > 0
   
 
   def followed_posts(self):
@@ -53,7 +53,7 @@ class User(UserMixin, db.Model):
       followers.c.follower_id == self.id
     )
 
-    own = Post.query.filter_by(user_id == self.id)
+    own = Post.query.filter_by(user_id = self.id)
 
     return followed.union(own).order_by(Post.timestamp.desc())
 
